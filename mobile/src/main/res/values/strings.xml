@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">IeeeManager</string>
+    <string name="action_settings">Settings</string>
+    <string name="dniLabel">Introduce tu dni</string>
+    <string name="open">Abrir</string>
+    <string name="nameLabel">Introduce tu nombre</string>
+    <string name="openLabel">Abre la puerta</string>
+    <string name="registerLabel">Registrar</string>
+    <string name="regIdLabel">Intruduce tu Registration Id</string>
+    <string name="tokenLabel">"Tu token es: "</string>
+    <string name="budgetLabel">"Tu saldo es: "</string>
+    <string name="reloadFridgeLabel">"Consulta saldo"</string>
+    <string name="reloadPrinter3dLabel">"Consulta estado"</string>
+    <string name="registerButton">Registro</string>
+    <string name="door_icon">Door icon</string>
+    <string name="door_card_title_text">Gestión de la puerta</string>
+    <string name="fridge_card_title_text">Gestión de la nevera</string>
+    <string name="printer_3d_card_title_text">Gestión de la prusa i3</string>
+    <string name="no_budget">Pulsa el botón de consulta de saldo</string>
+    <string name="loginLabel">Inicio de sesión</string>
+    <string name="loggedInLabel">Datos de usuario</string>
+    <string name="logoffButton">Revocar token</string>
+    <string name="name_info">"Nombre: "</string>
+    <string name="dni_info">"DNI: "</string>
+    <string name="token_info">"Token: "</string>
+    <string name="latchCardTitle">Gestión de latch</string>
+    <string name="latchTokenLabel">"Tu pairing token es: "</string>
+    <string name="slic3rCardTitle">Gestión de Slic3r</string>
+    <string name="uploadLabel">Subida de modelos 3d</string>
+    <string name="stlUploadButton">Sube el archivo</string>
+    <string name="stlFileLabelText">"Archivo: "</string>
+    <string name="stlUploadButtonText">Sube el archivo</string>
+    <string name="stlSelectButton">Elige el archivo</string>
+ <string name="emptyCardList">Inicia sesion primero en el menu de ajustes</string>
+</resources>

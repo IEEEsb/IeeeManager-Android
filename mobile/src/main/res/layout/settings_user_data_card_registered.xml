@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp" 
+    android:background="#EEEEEE">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center" 
+        android:background="@drawable/layer_card_background"
+        android:orientation="vertical"
+        android:padding="10dp">
+        
+ 		 <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loggedInLabel"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:paddingBottom="5dp" 
+            />
+
+ 		 <TextView
+ 		     android:id="@+id/nameLabel"
+ 		     android:layout_width="wrap_content"
+ 		     android:layout_height="wrap_content"
+ 		     android:text="@string/name_info"
+ 		     android:textAppearance="?android:attr/textAppearanceMedium" 
+ 		     android:layout_gravity="start"/>
+
+ 		 <TextView
+ 		     android:id="@+id/dniLabel"
+ 		     android:layout_width="wrap_content"
+ 		     android:layout_height="wrap_content"
+ 		     android:text="@string/dni_info"
+ 		     android:textAppearance="?android:attr/textAppearanceMedium"
+ 		     android:layout_gravity="start" />
+
+ 		 <TextView
+ 		     android:id="@+id/tokenLabel"
+ 		     android:layout_width="wrap_content"
+ 		     android:layout_height="wrap_content"
+ 		     android:text="@string/token_info"
+ 		     android:textAppearance="?android:attr/textAppearanceMedium"
+ 		     android:layout_gravity="start" 
+ 		      android:textIsSelectable="true"
+ 		    />
+
+ 		 <Button
+ 		     android:id="@+id/button1"
+ 		     android:layout_width="wrap_content"
+ 		     android:layout_height="wrap_content"
+ 		     android:text="@string/logoffButton"
+ 		     android:layout_gravity="end"
+ 		     android:onClick="logOff" />
+    
+    </LinearLayout>
+
+</FrameLayout>

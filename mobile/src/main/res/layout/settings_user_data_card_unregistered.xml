@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp" 
+    android:background="#EEEEEE">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center" 
+        android:background="@drawable/layer_card_background"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loginLabel"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:paddingBottom="5dp" />
+
+        <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:hint="@string/nameLabel"
+        android:gravity="center"
+        android:textColor="#555555"/>
+
+    <EditText
+        android:id="@+id/dni"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:hint="@string/dniLabel"
+        android:gravity="center"
+        android:textColor="#555555"/>
+	<EditText
+        android:id="@+id/registrationId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:hint="@string/regIdLabel"
+        android:gravity="center"
+        android:textColor="#555555"/>
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/registerButton" 
+        android:onClick="registerDoor"
+        android:textColor="#333333"/>
+    
+    </LinearLayout>
+
+</FrameLayout>
