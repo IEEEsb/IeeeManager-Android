@@ -55,6 +55,7 @@ import es.ieeesb.ieeemanager.model.FridgeUser;
 import es.ieeesb.ieeemanager.model.LatchUser;
 import es.ieeesb.ieeemanager.model.Printer3dUser;
 import es.ieeesb.ieeemanager.model.Slic3rUser;
+import es.ieeesb.ieeemanager.tasks.PostOpen;
 import es.ieeesb.ieeemanager.tools.UriResolver;
 
 public class MainActivity extends Activity {
@@ -274,7 +275,7 @@ public class MainActivity extends Activity {
 	}
 
 	public void openDoor(View v) {
-		PostOpen task = new PostOpen(cardList.getChildAt(getIndexOfParent(v))
+		PostOpen task = new PostOpen(this,cardList.getChildAt(getIndexOfParent(v))
 				.findViewById(R.id.openButton));
 		task.execute(doorUser.getName(), doorUser.getDni(), doorUser.getToken());
 	}
@@ -345,7 +346,7 @@ public class MainActivity extends Activity {
 		return responseSB.toString();
 	}
 
-	private HttpURLConnection createConnection(URL url, String type)
+	public static HttpURLConnection createConnection(URL url, String type)
 			throws IOException {
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		conn.setReadTimeout(30000);
@@ -385,63 +386,7 @@ public class MainActivity extends Activity {
 		}
 	}
 
-	public class PostOpen extends AsyncTask<String, Void, Boolean> {
-		private View openButton;
 
-		public PostOpen(View b) {
-			this.openButton = b;
-		}
-
-		@Override
-		protected void onPreExecute() {
-			openButton.setEnabled(false);
-			super.onPreExecute();
-		}
-
-		@Override
-		protected Boolean doInBackground(String... params) {
-
-			boolean abierta = false;
-			try {
-				List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(
-						3);
-				nameValuePairs.add(new BasicNameValuePair("Name", params[0]));
-				nameValuePairs.add(new BasicNameValuePair("DNI", params[1]));
-				nameValuePairs.add(new BasicNameValuePair("Token", params[2]));
-				URL url = new URL(URL_SERVER_DOOR);
-				HttpURLConnection conn = createConnection(url, "POST");
-				OutputStream os = conn.getOutputStream();
-				BufferedWriter writer = new BufferedWriter(
-						new OutputStreamWriter(os, "UTF-8"));
-				writer.write(getQuery(nameValuePairs));
-				writer.flush();
-				writer.close();
-				os.close();
-
-				conn.connect();
-				int responseCode = conn.getResponseCode();
-				if (responseCode != 404) {
-					abierta = true;
-				}
-			} catch (ClientProtocolException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			return abierta;
-		}
-
-		@Override
-		protected void onPostExecute(Boolean result) {
-			String text = result ? "Abierta" : "Nope";
-			Toast t = Toast.makeText(MainActivity.this, text,
-					Toast.LENGTH_SHORT);
-			t.show();
-			openButton.setEnabled(true);
-			super.onPostExecute(result);
-		}
-
-	}
 
 	public class PostBudget extends AsyncTask<String, Void, Float> {
 		private View reloadButton;
